@@ -1,10 +1,54 @@
 <html>
-<head>
+  <head>
     <title>Score Counter</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+	    $(function() {
+		    $("#button1").click(function() {
+			    $("#score1").text(function(i, current) {
+				    if($(this).text() === '4') {
+					    $(".row button").each(function() {
+						    $(this).attr('disabled', true);
+					    });
+					    $("#player1").css({'background':'#0f0'});
+					    $("#player2").css({'background':'#f00'});
+				    }
+				    return (+current + 1);
+			    });
+		    });
+		    $("#button2").click(function() {
+			    $("#score2").text(function(i, current) {
+				    if($(this).text() === '4') {
+					    $(".row button").each(function() {
+						    $(this).prop('disabled', true);
+					    });
+					    $("#player2").css({'background':'#0f0'});
+					    $("#player1").css({'background':'#f00'});
+				    }
+				    return (+current + 1);
+			    });
+		    });
+		    $("#reset").click(function() {
+			    $(".row button").each(function() {
+				    $(this).attr('disabled', false);
+			    });
+			    $(".score").each(function() {
+				    $(this).text('0');
+			    });
+			    $("div.xyz").css({'background':'#fff'});
+		    });
+	    });
+    </script>
     <style>
       .xyz {
         display: flex;
@@ -54,57 +98,5 @@
     <div class="reset">
       <button class="btn" id="reset">Reset</button>
     </div>
-  
-<script>
-  $(document).ready(function(){
-    var
-    var count1=0;
-    var count2=0;
-    $("#button1").click(function(){
-          
-          $("#score1").html(++count1);
-
-          if (count1<=5 && count2<=5)
-      {         if (count1==5 && count2!=5)
-                   { $("#player1").css("background", "light green"); 
-                     $("#player2").css("background", "red");
-                     $("#score1").stop(count1==5);
-                   }
-
-                  
-
-      }   
-      return count1;
-        
-         
-     })
-    $("#button2").click(function(){
-            
-    
-      $("#score2").html(++count2,5);
-     
-     if (count1<=5 && count2<=5){
-           if( count1!=5 && count2==5)
-               { $("#player1").css("background", "red"); 
-                $("#player2").css("background", "green"); 
-                   $("#score2").stop(count2==5);
-              }
-                        
-     }
-
-    })
-       
-    //Reset button   
-    $("#reset").click(function(){
-      $("#score1").html(count1=0);
-       $("#score2").html(count2=0);
-       if( count1==0 && count2==0){
-        $("#player1").css("background", "transparent"); 
-        $("#player2").css("background", "transparent"); 
-      }
-    })
-  })
-</script>
-
-</body>
+  </body>
 </html>
