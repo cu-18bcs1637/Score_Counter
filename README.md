@@ -1,4 +1,4 @@
-# Score_Counter5
+# Score Counter
 #Counts Score till 5 and declare a winner
 Here in this mini project there are 2 players.
 Player 1 on the left side and Player 2 on the right side.
