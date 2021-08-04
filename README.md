@@ -8,8 +8,9 @@ The player who reaches the score five first is declared as winner(it is depicted
 
 Visit here: https://cu-18bcs1637.github.io/Score_Counter/
 
-Quick Peek:
+### Quick Peek:
 
-![image](https://user-images.githubusercontent.com/55397457/128231178-1d6dfb0c-c509-4b42-ac99-4689021150ca.png)
+![Animation](https://user-images.githubusercontent.com/55397457/128232253-a2d194d1-93e6-45b9-ba0d-38e566bf6696.gif)
+
 
 
